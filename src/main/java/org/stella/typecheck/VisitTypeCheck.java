@@ -985,7 +985,7 @@ public class VisitTypeCheck {
                         var expectedBinding = typeRecord.listrecordfieldtype_.get(i).accept(new RecordFieldTypeVisitor<>(), arg);
 
                         if (!binding.getKey().equals(expectedBinding.getKey())) {
-                            throw new RuntimeException("ERROR_UNEXPECTED_RECORD_FIELDS");
+                            throw new RuntimeException("ERROR_UNEXPECTED_FIELD_ACCESS");
                         }
                         checkType(binding.getValue(), expectedBinding.getValue());
                     }
